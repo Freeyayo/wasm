@@ -8,7 +8,7 @@ let start_string_index = 100;
  * but setting this value too high can result in an error 
  * if the browser is unable to find enough contiguous memory to fulfill the request.”
  */
-let memory = new WebAssembly.Memory({
+const memory = new WebAssembly.Memory({
     initial: 1  // a size of one page
 })
 
@@ -29,7 +29,7 @@ const importObject = {
     }
 }
 
-async function run() {
+async function main() {
     const obj = await WebAssembly.instantiate(
         new Uint8Array(bytes), 
         importObject
@@ -39,4 +39,4 @@ async function run() {
     hello_world()
 }
 
-run();
+main();

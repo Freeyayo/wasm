@@ -1,0 +1,10 @@
+{
+    "configurations": [
+        {
+            "type": "pwa-chrome",
+            "name": "http://global_test()",
+            "request": "launch",
+            "url": "http://global_test()"
+        }
+    ]
+}
