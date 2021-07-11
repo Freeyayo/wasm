@@ -1,7 +1,6 @@
 const fs = require('fs');
 const bytes = fs.readFileSync(__dirname + '/2_global_variables_and_type_conversion.wasm');
 let global_test = null;
-let obj = null
 
 const importObject = {
     js: {
@@ -17,13 +16,15 @@ const importObject = {
 }
 
 async function main() {
-    obj = await WebAssembly.instantiate(
+    const obj = await WebAssembly.instantiate(
         new Uint8Array(bytes),
         importObject
-    )
+    );
 
-    ({globaltest: global_test} = obj.instance.exports)
-    global_test()
+    obj.instance.exports.globaltest();
+    // i32 705032704
+    // f32 123.01234436035156
+    // f64 123.0123456789
 }
 
 main()
