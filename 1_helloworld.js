@@ -4,6 +4,7 @@ const bytes = fs.readFileSync(__dirname + '/1_hello_world.wasm');
 let hello_world = null;
 let start_string_index = 100;
 /**
+
  * “You can allocate up to two gigabytes this way, 
  * but setting this value too high can result in an error 
  * if the browser is unable to find enough contiguous memory to fulfill the request.”
